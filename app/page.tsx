@@ -9,6 +9,7 @@ export interface Todo {
   text: string
   completed: boolean
   createdAt: Date
+  dueDate: Date
 }
 
 export default function TodoApp() {
@@ -28,7 +29,8 @@ export default function TodoApp() {
       id: crypto.randomUUID(),
       text,
       completed: false,
-      createdAt: new Date()
+      createdAt: new Date(),
+      dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
     }])
   }
 
